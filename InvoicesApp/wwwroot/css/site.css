@@ -1,0 +1,335 @@
+﻿/* Disable arrow buttons for integers*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+/*------------------------------------------------*/
+.body-invoices {
+    font: 16px;
+    background: #f3f5f6;
+    height:100%;
+}
+html.invoices-loading {
+    background: #333 no-repeat url(../img/spinner-1.gif) 50% 50%;
+    background-color: #fff !important;
+}
+
+    html.invoices-loading body {
+        background: #fff;
+        opacity: 0.1;
+        -webkit-transition: opacity 0;
+        transition: opacity 0;
+        pointer-events: none;
+    }
+        html.invoices-loading body nav {
+            background-color: #fff !important;
+        }
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left 1s;
+    padding: 20px;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+.notransition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+.invoices-list-table{
+    margin-top:60px;
+    margin-left:80px;
+}
+.invoice-sort-row {
+    position: relative;
+    /*left: -170px;*/
+    margin-left: 90px;
+    height: 80px;
+    background-color: lightgrey;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: silver;
+    border-width: thick;
+}
+
+.invoices-sort-row-div {
+    margin-top: 20px;
+}
+    .invoices-sort-row-div * {
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+        font-size: 16px;
+    }
+    .invoices-sort-row-div input ~ label {
+        padding-left: 25px;
+    }
+    .invoices-sort-row-div input ~ button {
+        margin-left: 25px;
+        width: 70px;
+    }
+    .invoices-sort-row-div input, button {
+        border-radius: 25px 20px 20px 25px;
+        border-style: solid;
+        border-color: silver;
+        text-align: center;
+    }
+
+.invoices-list-row {
+    line-height: 25px !important;
+    margin-top: 20px;
+    /*left: -170px;*/
+    position: relative;
+}
+    .invoices-list-row p {
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+        text-align: start;
+        vertical-align: middle;
+    }
+    .invoices-list-row a {
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+        text-align: start;
+        vertical-align: middle;
+    }
+.invoices-border-left {
+    /*width: 70%;*/
+    border-radius: 20px;
+    line-height: inherit;
+    background-image: radial-gradient(circle at 796px 41px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 37px, lightgrey 38px);
+    background-color: transparent;
+}
+.invoices-border-left-top {
+    
+    /*width: 70%;*/
+    border-bottom: 1px solid grey;
+
+    font-size:20px;
+}
+.invoices-border-left-bottom {
+    font-size: 14px;
+}
+
+.invoices-border-left div {
+    line-height: inherit;
+}
+.invoices-border-right {
+    /*width: 30%;*/
+    border-radius: 40px;
+    background-image: radial-gradient(circle at 33px 41px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 36px, lightgrey 37px);
+    background-color: transparent;
+    left: -20px;
+    /*left:-60px;*/
+}
+.invoices-border-right-img {
+    top: 10px;
+    display: inline-block;
+    left: 30px;
+    /*left: 61px;*/
+    position: relative;
+}
+.invoices-border-right-spinner {
+    display:none;
+    top:11px;
+    display:inline-block;
+    position:relative;
+    left:-11px;
+
+}
+.img-opacityNull {
+    opacity:.5;
+    transition: opacity .2s ease-in-out;
+}
+.img-opacityFull {
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+}
+.infopanel {
+    height: 80%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: width 1s /* 0.5 second transition effect to slide in the sidenav */;
+    border-radius: 30px 0 0 30px;
+    background-color: lightgrey;
+    border-left-style:solid;
+    border-top-style:solid;
+    border-bottom-style:solid;
+    border-color: silver;
+    border-width: thick;
+
+}
+/* The navigation menu links */
+.infopanel-title {
+    position: relative;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    font-size:30px;
+    margin-left:25px;
+}
+
+/* Position and style the close button (top right corner) */
+    .infopanel .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+#toTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    padding: 15px; /* Some padding */
+    opacity: 1; /* Add a dark-grey background on hover */
+    transition: opacity .2s ease-in-out;
+}
+
+    #toTopBtn:hover {
+        opacity: .5; /* Add a dark-grey background on hover */
+        transition: opacity .2s ease-in-out;
+    }
+.existingInvoice {
+    border-style:solid;
+    border-radius:10px;
+    width:inherit;
+    border-color:silver;
+}
+    .existingInvoice button {
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+        font-size: 20px;
+        border-radius: 25px !important;
+        width: 95%;
+        margin: auto;
+    }
+    .existingInvoice input {
+        border-radius: 25px !important;
+        border-style: solid;
+        border-color: silver;
+        margin-top: 5px;
+        width: 100%;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+        font-size: 30px;
+    }
+        .existingInvoice input ~ button {
+            margin-top: 10px;
+        }
+    .existingInvoice button ~ button {
+        margin-top: 5px;
+    }
+.assignmentsDataRow label {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    font-size: 15px;
+}
+.assignmentsDataRow input {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    font-size: 15px;
+}
+.input-correct {
+    border: 2px solid;
+    border-color: green !important;
+    border-radius: 4px;
+/*    font-size: 1rem;
+    margin: 0.25rem;
+    min-width: 125px;
+    padding: 0.5rem;*/
+    transition: border-color 0.5s ease-out;
+}
+.input-invalid {
+    border: 2px solid;
+    border-color: red !important; 
+    border-radius: 4px;
+/*    font-size: 1rem;
+    margin: 0.25rem;
+    min-width: 125px;
+    padding: 0.5rem;*/
+    transition: border-color 0.5s ease-out;
+}
+.input-optional {
+    border: 2px solid;
+    border-color: orange;
+    border-radius: 4px;
+/*    font-size: 1rem;
+    margin: 0.25rem;
+    min-width: 125px;
+    padding: 0.5rem;*/
+    transition: border-color 0.5s ease-out;
+}
+.invoices-settings-table {
+    position:relative;
+}
+.invoices-settings-row {
+    position: relative;
+    padding-bottom: 10px;
+    margin-top: 5px;
+    background-color: gainsboro;
+    border-style: solid;
+    border-width: thin;
+    border-color: silver;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: max-height .2s ease-in-out;
+}
+.invoices-settings-row-element {
+    margin-top: 10px;
+    margin-left: 15px;
+    
+}
+    .invoices-settings-row-element input {
+        position:relative;
+        left:10px;
+        border-radius: 10px;
+        background-color: #f3f5f6;
+    }
+.AddInfoRow textarea {
+    position: relative;
+    left: 10px;
+    border-radius: 10px;
+    background-color: #f3f5f6;
+    resize: horizontal;
+    width: 50%;
+    max-width: 80%;
+    min-width: 30%;
+}
+.FooterRow input {
+    position: relative;
+    left: 10px;
+    border-radius: 10px;
+    background-color: #f3f5f6;
+    margin-bottom:15px;
+
+}
+
+.invoices-nav-item {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    font-size: 16px;
+    border: thin;
+    border-radius: 10px;
+    border-color: transparent;
+    cursor: default;
+}
+    .invoices-nav-item:hover {
+        cursor: default;
+        background-color: lightgrey;
+        border-color: #6c757d;
+        transition: background-color .2s ease-in-out;
+    }

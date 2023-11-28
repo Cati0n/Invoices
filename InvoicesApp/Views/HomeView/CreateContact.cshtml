@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "Index";
+ }
+<div class="row">
+    <div class="col-lg-6 col-ml-12">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row d-flex justify-content-center">
+                            <form id="contactdataform" class="form-control row">
+                                <div class="row">
+                                    <div class="form-group col-lg-6 col-md-12">
+                                        <lable class="control-label">Invoice Number</lable>
+                                        <input name="contactdata" id="invoicenumber" type="text" class="form-control" onblur="CheckFields(this)" />
+                                    </div>
+                                </div>
+                                @*<div class="row">
+                                        <div class="form-group col">
+                                            <label class="control-label">Reg Number</label>
+                                            <input name="contactdata" id="regnumber" type="text" class="form-control" onblur="CheckFields(this)" />
+                                        </div>
+                                        <div class="form-group col">
+                                            <label class="control-label">Company Name</label>
+                                            <input name="contactdata" id="companyname" type="text" class="form-control" onblur="CheckFields(this)" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <label class="control-label">First Name</label>
+                                            <input name="contactdata" id="firstname" type="text" class="form-control" onblur="CheckFields(this)" />
+                                        </div>
+                                        <div class="form-group col">
+                                            <label class="control-label">Last Name</label>
+                                            <input name="contactdata" id="lastname" type="text" class="form-control" onblur="CheckFields(this)" />
+                                        </div>
+                                    </div>*@
+                                <div class="row">
+                                    <div class="form-group col autocomplete-container" id="autocomplete-container">
+                                        <label class="control-label">Address</label>
+                                        <input name="contactdata" id="address" type="text" autocomplete="off" class="form-control" onblur="CheckFields(this)" />
+                                    </div>
+                                </div>
+                                @*<div class="row">
+                                        <div class="form-group col">
+                                            <label class="control-label">Email</label>
+                                            <input name="contactdata" id="email" type="email" class="form-control" onblur="CheckFields(this)" />
+                                        </div>
+                                        <div class="form-group col">
+                                            <label class="control-label">Phone</label>
+                                            <input name="contactdata" id="phone" type="tel" class="form-control" onblur="CheckFields(this)" />
+                                        </div>
+                                    </div>*@
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label class="control-label">Issue Date</label>
+                                        <input name="contactdata" id="issuedate" type="date" class="form-control" placeholder="Select the date" onblur="CheckFields(this)" />
+                                    </div>
+                                    <div class="form-group col">
+                                        <label class="control-label">Due Date</label>
+                                        <input name="contactdata" id="duedate" type="date" class="form-control" placeholder="Select the date" onblur="CheckFields(this)" />
+                                    </div>
+                                </div>
+                                <div id="addContactRowBtnGrp" class="row ml-1 mb-4 mt-1">
+                                    <input type="button" class="btn btn-outline-dark mb-3 btn-xs" value="First Name" onclick="AddContactRow(this)">
+                                    <input type="button" class="btn btn-outline-dark mb-3 btn-xs ml-3" value="Last Name" onclick="AddContactRow(this)">
+                                    <input type="button" class="btn btn-outline-dark mb-3 btn-xs ml-3" value="Reg Number" onclick="AddContactRow(this)">
+                                    <input type="button" class="btn btn-outline-dark mb-3 btn-xs ml-3" value="Company Name" onclick="AddContactRow(this)">
+                                    <input type="button" class="btn btn-outline-dark mb-3 btn-xs ml-3" value="Phone Number" onclick="AddContactRow(this)">
+                                    <input type="button" class="btn btn-outline-dark mb-3 btn-xs ml-3" value="Email" onclick="AddContactRow(this)">
+                                </div>
+                                <div id="submitContactDataForm" class="row ml-1">
+                                    <input type="button" value="Next" id="lastElementOnPage" class="btn btn-primary" onclick=CreateInvoice() />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

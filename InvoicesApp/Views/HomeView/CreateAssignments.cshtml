@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "Index";
+}
+
+<div class="card mt-5">
+    <div class="row card-header">
+        <label class="control-label col-6">Assignment</label>
+        <label class="control-label col">Unit</label>
+        <label class="control-label col">Quantity</label>
+        <label class="control-label col">Price</label>
+        <label class="control-label col">Total</label>
+    </div>
+    <div class="card-body">
+        <div id="AssignmentsForm" class="form-control col row">
+            <div name="AssignmentsRow" id="0" class="row assignmentsDataRow">
+                <div class="col-6">
+                    <textarea name="assignmentdata0" id="assignment0" class="form-control" onblur="CheckFields(this)"></textarea>
+                </div>
+                <div class="col">
+                    <input name="assignmentdata0" id="unit0" class="form-control" onblur="CheckFields(this)" />
+                </div>
+                <div class="col">
+                    <input class="form-control" name="assignmentdata0" id="QuantityInput0" type="number" step="0.01" onchange="CalculateTotal(this)" onblur="CheckFields(this)" />
+                </div>
+                <div class="col">
+                    <input class="form-control" name="assignmentdata0" id="PriceInput0" type="number" step="0.01" onchange="CalculateTotal(this)" onblur="CheckFields(this)" />
+                </div>
+                <div class="col">
+                    <input readonly name="assignmentdata0" id="TotalInput0" class="form-control" value="0" />
+                </div>
+            </div>
+            <div id="assignmentsButtonDiv" class="col card-footer">
+                <br />
+                <input type="button" id="addAssignmentRowBtn" class="btn btn-info" value="Add" onclick="addAssignmentRow()" />
+                <input type="button" class="btn btn-danger " value="Remove" onclick="removeAssignmentRow()" />
+                <input type="button" id="FinishInvoiceBtn" class="btn btn-success " value="Finish" onclick="CreateAssignments()" />
+            </div>
+        </div>
+    </div>
+</div>

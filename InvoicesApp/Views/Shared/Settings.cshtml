@@ -1,0 +1,98 @@
+﻿@{
+    Layout = "Index";
+}
+<div class="col-12 ml-1 row" style="max-width:98%; background: #fff; border-bottom: 1px solid #d8e3e7;">
+    <div class="horizontal-menu">
+        <nav>
+            <ul id="nav_menu">
+                <li>
+                    <a href="javascript:void(0)"><span>Account Settings</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><span>Account Security</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><span>Invoice Settings</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="col-12 mt-5">
+    <div class="card col row ">
+        <div class="card-header">
+            <h4 class="header-title">Account Settings</h4>
+        </div>
+        <div class="card-body">
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Company Name</label>
+                <input class="form-control" />
+            </div>
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Company Email</label>
+                <input class="form-control" />
+            </div>
+            <button class="btn btn-primary ml-3">Save Information</button>
+        </div>
+    </div>
+    <div class="card col row d-flex justify-content-center mt-5">
+        <div class="card-header">
+            <h4 class="header-title">Security Settings</h4>
+        </div>
+        <div class="card-body">
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Old Password</label>
+                <input class="form-control" />
+            </div>
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>New Password</label>
+                <input class="form-control" />
+            </div>
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Confirm New Password</label>
+                <input class="form-control" />
+            </div>
+            <button class="btn btn-primary ml-3">Change Password</button>
+        </div>
+    </div>
+    <div class="card col row  mt-5">
+        <div class="card-header">
+            <h4 class="header-title">Invoice Settings</h4>
+        </div>
+        <div class="card-body">
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Invoice Header</label>
+                <input class="form-control" />
+                <button class="btn btn-primary ml-3 mt-3">Upload</button>
+            </div>
+            <div style="position: relative; height: 178px;">
+                <div class="form-group col-xl-6 col-lg-12 m-fadeIn" id="firstColFoot">
+                    <label>Invoice Footer: Left</label>
+                    <input class="form-control col" />
+                    <input class="form-control col mt-2" />
+                    <input class="form-control col mt-2" />
+                </div>
+                <div class="form-group col-xl-6 col-lg-12 m-fadeOut" id="secondColFoot">
+                    <label>Invoice Footer: Center</label>
+                    <input class="form-control col" />
+                    <input class="form-control col mt-2" />
+                    <input class="form-control col mt-2" />
+                </div>
+                <div class="form-group col-xl-6 col-lg-12 m-fadeOut" id="thirdColFoot">
+                    <label>Invoice Footer: Right</label>
+                    <input class="form-control col" />
+                    <input class="form-control col mt-2" />
+                    <input class="form-control col mt-2" />
+                </div>
+            </div>
+            <nav aria-label="...">
+                <ul class="pagination pg-color-border justify-content-start ml-3 mt-1">
+                    <li class="page-item active"><a class="page-link" onclick="ChangeFooter('first',this.parentNode)">Left Column</a></li>
+                    <li class="page-item"><a class="page-link" onclick="ChangeFooter('second',this.parentNode)">Middle Column</a></li>
+                    <li class="page-item"><a class="page-link" onclick="ChangeFooter('third',this.parentNode)">Right Column</a></li>
+                </ul>
+            </nav>
+            <button class="btn btn-primary ml-3 mt-3">Save</button>
+        </div>
+    </div>
+</div>
